@@ -13,7 +13,6 @@ m1test = []
 m2test = []
 m3test = []
 
-
 def a(n, r=0.2):
     n = int(n)
     if n == 0:
@@ -21,11 +20,8 @@ def a(n, r=0.2):
     else:
         x = a(n - 1, r=r)
         return r * x * (1 - x)
-
-
 for i in range(100):
     m1.append(a(i))
-
 
 def a(n, r=0.5):
     n = int(n)
@@ -34,11 +30,8 @@ def a(n, r=0.5):
     else:
         x = a(n - 1, r=r)
         return r * x * (1 - x)
-
-
 for i in range(100):
     m2.append(a(i))
-
 
 def a(n, r=1):
     n = int(n)
@@ -47,11 +40,8 @@ def a(n, r=1):
     else:
         x = a(n - 1, r=r)
         return x * (1 - x)
-
-
 for i in range(100):
     m3.append(a(i))
-
 
 def a(n, r=2):
     n = int(n)
@@ -60,11 +50,8 @@ def a(n, r=2):
     else:
         x = a(n - 1, r=r)
         return r * x * (1 - x)
-
-
 for i in range(100):
     m4.append(a(i))
-
 
 def a(n, r=3):
     n = int(n)
@@ -73,10 +60,9 @@ def a(n, r=3):
     else:
         x = a(n - 1, r=r)
         return r * x * (1 - x)
-
-
 for i in range(100):
     m5.append(a(i))
+
 print("m1=", m1, "m2=", m2, "m3=", m3, "m4=", m4, "m5=", m5)
 
 # Построение графиков
@@ -93,7 +79,6 @@ plt.ylabel('x(n)', fontsize=15)
 plt.grid()
 plt.show()
 
-
 # Тесты
 
 def a(n, r=0.2):
@@ -104,10 +89,8 @@ def a(n, r=0.2):
         x = a(n - 1, r=r)
         return r * x * (1 - x)
 
-
 for i in range(5):
     m1test.append(a(i))
-
 
 def a(n, r=0.5):
     n = int(n)
@@ -117,10 +100,8 @@ def a(n, r=0.5):
         x = a(n - 1, r=r)
         return r * x * (1 - x)
 
-
 for i in range(5):  # беру 5 элементов для простоты
     m2test.append(a(i))
-
 
 def a(n, r=1):
     n = int(n)
@@ -130,7 +111,6 @@ def a(n, r=1):
         x = a(n - 1, r=r)
         return r * x * (1 - x)
 
-
 for i in range(5):  # беру 5 элементов для простоты
     m3test.append(a(i))
 
@@ -139,24 +119,18 @@ m2test1 = [round(t, 6) for t in m2test]  # округление списков �
 m3test1 = [round(t, 6) for t in m3test]  #
 
 print("m1test1=", m1test1, "n1=", n1)
-
-
 if collections.Counter(n1) == collections.Counter(m1test1):  # сравнение списков
     print("Списки одинаковые")
 else:
     print("Списки неодинаковые")
 
 print("m2test1=", m2test1, "n2=", n2)
-
-
 if collections.Counter(n2) == collections.Counter(m2test1):  # сравнение списков
     print("Списки одинаковые")
 else:
     print("Списки неодинаковые")
 
 print("m3test1=", m2test1, "n3=", n3)
-
-
 if collections.Counter(n3) == collections.Counter(m3test1):  # сравнение списков
     print("Списки одинаковые")
 else:
